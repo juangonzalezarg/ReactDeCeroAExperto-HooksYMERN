@@ -31,7 +31,7 @@ router.post(
     crearEvento );
 
 // Actualizar evento
-router.post('/:id',
+router.put('/:id',
     [
         check('title', 'El título es obligatorio').not().isEmpty(),
         check('start', 'Fecha de inicio obligatoria').custom( isDate ),
