@@ -82,9 +82,9 @@ export const useAuthStore = () => {
 
     return {
         // Propiedades
+        errorMessage,
         status, 
         user, 
-        errorMessage,
 
         // Métodos
         checkAuthToken,
