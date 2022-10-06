@@ -38,15 +38,16 @@ export const useAuthStore = () => {
             dispatch( onLogin({ name: data.name, uid: data.uid }) );
 
         } catch (error) {
-            const { email, name, password } = error.response.data.errors;
+            // const { email, name, password } = error.response.data.errors;
+            //console.log(error.response.data)
             
-            if ( name !== undefined ) {
-                dispatch( onLogout(name.msg) );                
-            } else if ( email !== undefined ) {
-                dispatch( onLogout(email.msg) );                
-            } else if ( password !== undefined ) {
-                dispatch( onLogout(password.msg) );                
-            }
+            // if ( name !== undefined ) {
+            //     dispatch( onLogout(name.msg) );                
+            // } else if ( email !== undefined ) {
+            //     dispatch( onLogout(email.msg) );                
+            // } else if ( password !== undefined ) {
+                dispatch( onLogout() );                
+            // }
 
             setTimeout(() => {
                 dispatch( clearErrorMessage() );
